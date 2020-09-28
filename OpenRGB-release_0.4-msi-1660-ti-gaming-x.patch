@@ -1,7 +1,6 @@
-diff --git a/OpenRGB-release_0.4/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp b/OpenRGB-release_0.4-new/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
-index 3409c88..41f57ec 100644
---- a/OpenRGB-release_0.4/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
-+++ b/OpenRGB-release_0.4-new/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
+diff -urN OpenRGB-release_0.4/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp OpenRGB-release_0.4-dest/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
+--- OpenRGB-release_0.4/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp	2020-09-09 11:05:11.000000000 +0500
++++ OpenRGB-release_0.4-msi/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp	2020-09-28 22:10:48.051336207 +0500
 @@ -22,6 +22,7 @@
  /*-----------------------------------------------------*\
  | NVidia device IDs                                     |
@@ -18,7 +17,7 @@ index 3409c88..41f57ec 100644
  #define MSI_GTX1070_GAMING_X_SUB_DEV            0x3306
  #define MSI_RTX2060S_GAMING_X_SUB_DEV           0xC752
  #define MSI_RTX2070S_GAMING_X_SUB_DEV           0x373e
-@@ -66,6 +68,7 @@ typedef struct
+@@ -66,6 +68,7 @@
  
  static const msi_gpu_pci_device device_list[] =
  {
