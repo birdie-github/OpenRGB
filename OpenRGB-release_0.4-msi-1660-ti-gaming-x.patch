@@ -1,0 +1,28 @@
+diff --git a/OpenRGB-release_0.4/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp b/OpenRGB-release_0.4-new/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
+index 3409c88..41f57ec 100644
+--- a/OpenRGB-release_0.4/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
++++ b/OpenRGB-release_0.4-new/Controllers/MSIGPUController/MSIGPUControllerDetect.cpp
+@@ -22,6 +22,7 @@
+ /*-----------------------------------------------------*\
+ | NVidia device IDs                                     |
+ \*-----------------------------------------------------*/
++#define NVIDIA_GTX1660TI_DEV                    0x2182
+ #define NVIDIA_GTX1070_DEV                      0x1B81
+ #define NVIDIA_RTX2060_DEV                      0x1F08
+ #define NVIDIA_RTX2060S_DEV                     0x1F06
+@@ -39,6 +40,7 @@
+ /*-----------------------------------------------------*\
+ | MSI sub-device IDs                                    |
+ \*-----------------------------------------------------*/
++#define MSI_GTX1660TI_GAMING_X_SUB_DEV          0x375A
+ #define MSI_GTX1070_GAMING_X_SUB_DEV            0x3306
+ #define MSI_RTX2060S_GAMING_X_SUB_DEV           0xC752
+ #define MSI_RTX2070S_GAMING_X_SUB_DEV           0x373e
+@@ -66,6 +68,7 @@ typedef struct
+ 
+ static const msi_gpu_pci_device device_list[] =
+ {
++    { NVIDIA_VEN,   NVIDIA_GTX1660TI_DEV,   MSI_SUB_VEN,    MSI_GTX1660TI_GAMING_X_SUB_DEV,         "MSI GeForce GTX 1660TI Gaming X"                 },
+     { NVIDIA_VEN,   NVIDIA_GTX1070_DEV,     MSI_SUB_VEN,    MSI_GTX1070_GAMING_X_SUB_DEV,           "MSI GeForce GTX 1070 Gaming X"                 },
+     { NVIDIA_VEN,   NVIDIA_RTX2060S_DEV,    MSI_SUB_VEN,    MSI_RTX2060S_GAMING_X_SUB_DEV,          "MSI GeForce RTX 2060 Super Gaming X"           },
+     { NVIDIA_VEN,   NVIDIA_RTX2070S_DEV,    MSI_SUB_VEN,    MSI_RTX2070S_GAMING_X_SUB_DEV,          "MSI GeForce RTX 2070 Super Gaming X"           },
