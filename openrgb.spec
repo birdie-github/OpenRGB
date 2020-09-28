@@ -43,7 +43,7 @@ desktop-file-install %{SOURCE1}
 %{_bindir}/%{_name}
 %{_datadir}/icons/hicolor/128x128/%{_name}.png
 %{_datadir}/applications/%{_name}.desktop
-%{_datadir}/usr/share/pixmaps/OpenRGB.png
+%{_datadir}/pixmaps/OpenRGB.png
 %license LICENSE
 %doc README.md
 
