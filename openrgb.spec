@@ -2,7 +2,7 @@
 
 Name:           openrgb
 Version:        0.4
-Release:        2%{?dist}
+Release:        0%{?dist}
 Summary:        Open source RGB lighting control that doesn't depend on manufacturer software
 
 License:        GPLv2
