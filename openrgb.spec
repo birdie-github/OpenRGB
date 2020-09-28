@@ -28,7 +28,7 @@ ASUS, ASRock, Corsair, G.Skill, Gigabyte, HyperX, MSI, Razer, ThermalTake, and m
 %make_build
 
 %install
-%make_install
+%make_install INSTALL_ROOT=%{buildroot}
 
 #bin
 install -Dpm 755 %{_name} %{buildroot}%{_bindir}/%{_name}
