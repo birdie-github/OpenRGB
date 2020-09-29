@@ -11,7 +11,7 @@ License:	GPLv2+
 URL:		http://goodies.xfce.org/projects/panel-plugins/%{name}
 Source0:	http://archive.xfce.org/src/panel-plugins/%{name}/%{majorver}/%{name}-%{version}.tar.bz2
 
-Patch0:		https://gitlab.xfce.org/panel-plugins/xfce4-calculator-plugin/-/merge_requests/2.diff
+Patch0:		https://raw.githubusercontent.com/birdie-github/OpenRGB/master/xfce4-calculator-plugin.do-not-move-cursor.diff
 
 BuildRequires:  gcc-c++
 BuildRequires:	automake
