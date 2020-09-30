@@ -20,7 +20,7 @@ BuildRequires:	libxfce4ui-devel
 BuildRequires:	xfce4-panel-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	intltool
-BuildRequires:  autoconf automake autogen xfce4-dev-tools
+BuildRequires:  autoconf automake autogen xfce4-dev-tools libtool
 Requires:	xfce4-panel
 
 %description
