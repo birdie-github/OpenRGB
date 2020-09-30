@@ -20,6 +20,7 @@ BuildRequires:	libxfce4ui-devel
 BuildRequires:	xfce4-panel-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	intltool
+BuildRequires:  autoconf automake autogen xfce4-dev-tools
 Requires:	xfce4-panel
 
 %description
@@ -34,6 +35,7 @@ and constants.
 
 
 %prep
+./autogen.sh
 %autosetup -p1
 # remove empty file
 rm -f NEWS
