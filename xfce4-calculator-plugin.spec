@@ -35,12 +35,12 @@ and constants.
 
 
 %prep
-./autogen.sh
 %autosetup -p1
 # remove empty file
 rm -f NEWS
 
 %build
+env NOCONFIGURE=1 ./autogen.sh
 %configure
 %make_build
 
