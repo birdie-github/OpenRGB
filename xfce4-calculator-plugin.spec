@@ -1,6 +1,7 @@
 %global _hardened_build 1
 %global majorver 0.7
 %global gen_name calculator
+%global _default_patch_fuzz 2
 
 Name:		xfce4-calculator-plugin
 Version:	0.7.0
