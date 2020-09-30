@@ -51,7 +51,7 @@ env NOCONFIGURE=1 ./autogen.sh
 
 %files -f %{name}.lang
 %license COPYING
-%doc README TODO ChangeLog AUTHORS
+%doc TODO AUTHORS
 %{_libdir}/xfce4/panel/plugins/libcalculator.so
 %{_libdir}/xfce4/panel/plugins/libcalculator.la
 %{_datadir}/xfce4/panel/plugins/%{gen_name}.desktop
