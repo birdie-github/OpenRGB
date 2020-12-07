@@ -1,7 +1,7 @@
 %global _name OpenRGB
 
 Name:           openrgb
-Version:        0.4
+Version:        0.5
 Release:        0%{?dist}
 Summary:        Open source RGB lighting control that doesn't depend on manufacturer software
 
@@ -10,7 +10,7 @@ URL:            https://gitlab.com/CalcProgrammer1/%{_name}
 Source0:        https://gitlab.com/CalcProgrammer1/%{_name}/-/archive/release_%{version}/OpenRGB-release_%{version}.tar.gz
 Source1:        %{_name}.desktop
 
-Patch0:         OpenRGB-release_0.4-msi-1660-ti-gaming-x.patch
+#Patch0:         OpenRGB-release_0.4-msi-1660-ti-gaming-x.patch
 
 BuildRequires:  gcc-c++ libusb-devel libstdc++-devel qt5-qtbase-devel desktop-file-utils hidapi-devel
 Requires:       hicolor-icon-theme
@@ -48,8 +48,8 @@ desktop-file-install %{SOURCE1}
 %doc README.md
 
 %changelog
-* Mon Sep 28 2020 Artem S. Tashkinov <aros gmx com> - 0.4-0
-- Updated to 0.4
+* Mon Dec 07 2020 Artem S. Tashkinov <aros gmx com> - 0.4-0
+- Updated to 0.5
 
 * Sat May 16 2020 Carlos Mogas da Silva <r3pek@r3pek.org> - 0.2-2
 - Applied review changes in https://bugzilla.redhat.com/show_bug.cgi?id=1835958#c1
