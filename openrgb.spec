@@ -7,10 +7,8 @@ Summary:        Open source RGB lighting control that doesn't depend on manufact
 
 License:        GPLv2
 URL:            https://gitlab.com/CalcProgrammer1/%{_name}
-Source0:        https://gitlab.com/CalcProgrammer1/%{_name}/-/archive/release_%{version}/OpenRGB-release_%{version}.tar.gz
+Source0:        https://gitlab.com/CalcProgrammer1/%{_name}/-/archive/release_%{version}/OpenRGB-release_%{version}.tar.bz2
 Source1:        %{_name}.desktop
-
-#Patch0:         OpenRGB-release_0.4-msi-1660-ti-gaming-x.patch
 
 BuildRequires:  gcc-c++ libusb-devel libstdc++-devel qt5-qtbase-devel desktop-file-utils hidapi-devel
 Requires:       hicolor-icon-theme
@@ -30,20 +28,24 @@ ASUS, ASRock, Corsair, G.Skill, Gigabyte, HyperX, MSI, Razer, ThermalTake, and m
 %install
 %make_install INSTALL_ROOT=%{buildroot}
 
-#bin
-install -Dpm 755 %{_name} %{buildroot}%{_bindir}/%{_name}
-
 #icon
-install -Dpm 644 qt/%{_name}.png %{buildroot}%{_datadir}/icons/hicolor/128x128/%{_name}.png
+install -Dpm 644 qt/%{_name}.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/%{_name}.png
 
 #desktop
 desktop-file-install %{SOURCE1}
 
+%post -n %{name}
+if [ -S /run/udev/control ]; then
+    udevadm control --reload
+    udevadm trigger
+fi
+
 %files
-%{_bindir}/%{_name}
-%{_datadir}/icons/hicolor/128x128/%{_name}.png
+%{_bindir}/%{name}
+%{_datadir}/icons/hicolor/128x128/apps/%{_name}.png
 %{_datadir}/applications/%{_name}.desktop
 %{_datadir}/pixmaps/OpenRGB.png
+/lib/udev/rules.d/60-%{name}.rules
 %license LICENSE
 %doc README.md
 
