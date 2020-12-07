@@ -51,6 +51,9 @@ desktop-file-install %{SOURCE1}
 * Mon Dec 07 2020 Artem S. Tashkinov <aros gmx com> - 0.4-0
 - Updated to 0.5
 
+* Mon Sep 28 2020 Artem S. Tashkinov <aros gmx com> - 0.4-0
+- Updated to 0.4
+
 * Sat May 16 2020 Carlos Mogas da Silva <r3pek@r3pek.org> - 0.2-2
 - Applied review changes in https://bugzilla.redhat.com/show_bug.cgi?id=1835958#c1
 
