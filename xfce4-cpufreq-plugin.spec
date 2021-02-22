@@ -4,7 +4,7 @@
 
 Name:           xfce4-cpufreq-plugin
 Version:        1.2.4
-Release:        1-test0-%{?dist}
+Release:        1%{?dist}
 Summary:        CPU frequency scaling plugin for the Xfce4 panel 
 
 License:        GPLv2+
