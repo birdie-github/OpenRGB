@@ -8,8 +8,8 @@ Release:        1%{?dist}
 Summary:        CPU frequency scaling plugin for the Xfce4 panel 
 
 License:        GPLv2+
-URL:            http://goodies.xfce.org/projects/panel-plugins/xfce4-cpufreq-plugin
-Source0:        http://archive.xfce.org/src/panel-plugins/%{name}/%{minorversion}/%{name}-%{version}.tar.bz2
+URL:            https://goodies.xfce.org/projects/panel-plugins/xfce4-cpufreq-plugin
+Source0:        https://archive.xfce.org/src/panel-plugins/%{name}/%{minorversion}/%{name}-%{version}.tar.bz2
 
 Patch0:         https://gitlab.xfce.org/panel-plugins/xfce4-cpufreq-plugin/-/commit/74baa255d6c8db9352bd5dc08be448145ea1d9d8.diff
 
