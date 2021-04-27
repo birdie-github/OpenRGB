@@ -2,7 +2,7 @@
 
 Name:           openrgb
 Version:        0.5
-Release:        0%{?dist}
+Release:        1%{?dist}
 Summary:        Open source RGB lighting control that doesn't depend on manufacturer software
 
 License:        GPLv2
@@ -50,7 +50,7 @@ fi
 %doc README.md
 
 %changelog
-* Mon Dec 07 2020 Artem S. Tashkinov <aros gmx com> - 0.4-0
+* Mon Dec 07 2020 Artem S. Tashkinov <aros gmx com> - 0.5-0
 - Updated to 0.5
 
 * Mon Sep 28 2020 Artem S. Tashkinov <aros gmx com> - 0.4-0
