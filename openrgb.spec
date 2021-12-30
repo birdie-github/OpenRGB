@@ -10,7 +10,7 @@ URL:            https://gitlab.com/CalcProgrammer1/%{_name}
 Source0:        https://gitlab.com/CalcProgrammer1/%{_name}/-/archive/release_%{version}/OpenRGB-release_%{version}.tar.bz2
 Source1:        %{_name}.desktop
 
-BuildRequires:  gcc-c++ libusb-devel libstdc++-devel qt5-qtbase-devel desktop-file-utils hidapi-devel mbedtls-devel
+BuildRequires:  gcc-c++ libusb-devel libstdc++-devel qt5-qtbase-devel desktop-file-utils hidapi-devel mbedtls-devel systemd-rpm-macros
 Requires:       hicolor-icon-theme
 
 %description
