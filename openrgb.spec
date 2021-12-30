@@ -42,10 +42,10 @@ fi
 
 %files
 %{_bindir}/%{name}
-%{_datadir}/icons/hicolor/128x128/apps/%{_name}.png
+%{_datadir}/icons/hicolor/*/apps/%{_name}.png
 %{_datadir}/applications/%{_name}.desktop
-%{_datadir}/pixmaps/OpenRGB.png
-/lib/udev/rules.d/60-%{name}.rules
+%{_metainfodir}/org.%{name}.%{_name}.metainfo.xml
+%{_udevrulesdir}/60-%{name}.rules
 %license LICENSE
 %doc README.md
 
