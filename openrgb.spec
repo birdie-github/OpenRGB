@@ -1,7 +1,7 @@
 %global _name OpenRGB
 
 Name:           openrgb
-Version:        0.6
+Version:        0.7
 Release:        0%{?dist}
 Summary:        Open source RGB lighting control that doesn't depend on manufacturer software
 
@@ -50,6 +50,9 @@ fi
 %doc README.md
 
 %changelog
+* Thu Dec 30 2021 Artem S. Tashkinov <aros gmx com> - 0.7-0
+- Updated to 0.7
+
 * Sat Jul 24 2021 Artem S. Tashkinov <aros gmx com> - 0.6-0
 - Updated to 0.6
 
