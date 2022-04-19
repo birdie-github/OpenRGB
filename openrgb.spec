@@ -1,8 +1,9 @@
 %global _name OpenRGB
+%global _lto_cflags %nil
 
 Name:           openrgb
 Version:        0.7
-Release:        0%{?dist}
+Release:        1%{?dist}
 Summary:        Open source RGB lighting control that doesn't depend on manufacturer software
 
 License:        GPLv2
@@ -50,6 +51,9 @@ fi
 %doc README.md
 
 %changelog
+* Thu Apr 18 2022 Artem S. Tashkinov <aros gmx com> - 0.7-1
+- Disabled -flto because it makes the app crash when when parsing a config file
+
 * Thu Dec 30 2021 Artem S. Tashkinov <aros gmx com> - 0.7-0
 - Updated to 0.7
 
