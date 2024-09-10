@@ -48,19 +48,16 @@ also be made to disappear from the task bar.
 
 %build
 %if 0%{?with_qt6}
-mkdir build
-pushd build
-%cmake ..
+%cmake
+%cmake_build
 %else
 %qmake_qt5
+%{make_build}
 %endif
 
-%{make_build}
 
 %install
-pushd build
-make install INSTALL_ROOT=%{buildroot}
-popd
+%cmake_install
 
 desktop-file-install \
   --dir=%{buildroot}%{_datadir}/applications \
