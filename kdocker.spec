@@ -40,17 +40,13 @@ also be made to disappear from the task bar.
 
 
 %build
-%if 0%{?with_qt6}
 %cmake
 %cmake_build
-%else
-%qmake_qt5
-%{make_build}
-%endif
 
 
 %install
 %cmake_install
+
 
 %files
 %license COPYING
