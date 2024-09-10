@@ -49,11 +49,10 @@ also be made to disappear from the task bar.
 
 
 %files
-%license COPYING
+%license LICENSE
 %doc AUTHORS ChangeLog README.md
 %{_mandir}/man1/kdocker.1*
 %{_bindir}/kdocker
-%config(noreplace) %{_sysconfdir}/bash_completion.d/*
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/applications/com.kdocker.KDocker.desktop
 %{_datadir}/dbus-1/interfaces/com.kdocker.KDocker.xml
