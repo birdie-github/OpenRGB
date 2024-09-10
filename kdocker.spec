@@ -53,6 +53,7 @@ also be made to disappear from the task bar.
 %doc AUTHORS ChangeLog README.md
 %{_mandir}/man1/kdocker.1*
 %{_bindir}/kdocker
+%{_datadir}/bash-completion/completions/%{name}
 %{_datadir}/icons/hicolor/*/apps/*
 %{_datadir}/applications/com.kdocker.KDocker.desktop
 %{_datadir}/dbus-1/interfaces/com.kdocker.KDocker.xml
