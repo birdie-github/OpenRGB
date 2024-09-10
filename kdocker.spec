@@ -49,7 +49,7 @@ also be made to disappear from the task bar.
 %if 0%{?with_qt6}
 mkdir build
 pushd build
-%cmake
+%cmake ..
 %else
 %qmake_qt5
 %endif
