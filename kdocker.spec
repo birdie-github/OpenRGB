@@ -26,6 +26,7 @@ BuildRequires: xorg-x11-proto-devel
 BuildRequires: libxcb-devel
 BuildRequires: desktop-file-utils
 BuildRequires: make
+BuildRequires: perl-podlators
 
 Requires:      hicolor-icon-theme
 Requires:      dbus
@@ -54,10 +55,12 @@ pushd build
 %qmake_qt5
 %endif
 
+%{make_build}
 
 %install
+pushd build
 make install INSTALL_ROOT=%{buildroot}
-install -m644 -p -D helpers/%{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
+popd
 
 desktop-file-install \
   --dir=%{buildroot}%{_datadir}/applications \
