@@ -1,34 +1,32 @@
 %global project KDocker
 
 %if 0%{?fedora}
-%global with_qt5 1
+%global with_qt6 1
 %endif
 
 Name:    kdocker
 Summary: Dock any application in the system tray
-Version: 5.4
-Release: 1%{?dist}
+Version: 6.0
+Release: 0%{?dist}
 
 License: GPLv2+
 URL:     https://github.com/user-none/%{project}
 Source0: %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-%if 0%{?with_qt5}
-BuildRequires: pkgconfig(Qt5Core)
-BuildRequires: pkgconfig(Qt5X11Extras)
-BuildRequires: qtsingleapplication-qt5-devel
+%if 0%{?with_qt6}
+BuildRequires: cmake(Qt6Gui)
 %else
-BuildRequires: qt4-devel
-BuildRequires: qtsingleapplication-devel
+BuildRequires: pkgconfig(Qt5Gui)
 %endif
 
-BuildRequires: libXmu-devel
 BuildRequires: libXpm-devel
+BuildRequires: xorg-x11-proto-devel
+BuildRequires: libxcb-devel
 BuildRequires: desktop-file-utils
 BuildRequires: make
 
 Requires:      hicolor-icon-theme
-
+Requires:      dbus
 
 %description
 %{project} will help you dock any application in the system tray. This means you
@@ -43,16 +41,13 @@ also be made to disappear from the task bar.
 
 %prep
 %setup -qn%{project}-%{version}
-# unbundle qtsingleapplication
-rm -fr 3rdparty
 
 
 %build
-%if 0%{?with_qt5}
-%qmake_qt5 SYSTEMQTSA=1
+%if 0%{?with_qt6}
+%qmake_qt6
 %else
-# be nice to epel's qmake
-%{?qmake_qt4:%{qmake_qt4}}%{!?qmake_qt4:%{_qt4_qmake}} SYSTEMQTSA=1
+%qmake_qt5
 %endif
 
 %{make_build}
@@ -61,7 +56,7 @@ rm -fr 3rdparty
 %install
 make install INSTALL_ROOT=%{buildroot}
 
-install -m644 -p -D helpers/kdocker.1 %{buildroot}%{_mandir}/man1/kdocker.1
+install -m644 -p -D helpers/%{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
 
 desktop-file-install \
   --dir=%{buildroot}%{_datadir}/applications \
@@ -71,16 +66,22 @@ desktop-file-install \
 
 %files
 %license COPYING
-%doc AUTHORS BUGS CREDITS ChangeLog README.md TODO VERSION
-%{_mandir}/man1/kdocker.1*
-%{_bindir}/kdocker
+%doc AUTHORS ChangeLog README.md
+%{_mandir}/man1/%{name}.1*
+%{_bindir}/%{name}
 %config(noreplace) %{_sysconfdir}/bash_completion.d/*
 %{_datadir}/icons/hicolor/*/apps/*
-%{_datadir}/applications/kdocker.desktop
-%{_datadir}/appdata/kdocker.appdata.xml
-
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/dbus-1/interfaces/%{name}.xml
+%{_datadir}/dbus-1/services/%{name}.service
+%{_datadir}/metainfo/%{name}.metainfo.xml
 
 %changelog
+* Tue Sep 10 2024 Artem S. Tashkinov <aros AT gmx.org> - 6.0-0
+- Test release
+- Upgraded to Qt6, dropped some dependencies
+
 * Wed Aug 17 2022 Artem S. Tashkinov <aros AT gmx.org> - 5.4-1
 - Reviving
 
