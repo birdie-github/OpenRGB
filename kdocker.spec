@@ -1,10 +1,7 @@
 %global project KDocker
 
-%if 0%{?fedora}
-%global with_qt6 1
-%endif
-
 Name:    kdocker
+Vendor:  com.kdocker
 Summary: Dock any application in the system tray
 Version: 6.0
 Release: 0%{?dist}
@@ -13,11 +10,7 @@ License: GPLv2+
 URL:     https://github.com/user-none/%{project}
 Source0: %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-%if 0%{?with_qt6}
 BuildRequires: cmake(Qt6Gui)
-%else
-BuildRequires: pkgconfig(Qt5Gui)
-%endif
 
 BuildRequires: cmake
 BuildRequires: gcc-c++
@@ -59,24 +52,17 @@ also be made to disappear from the task bar.
 %install
 %cmake_install
 
-desktop-file-install \
-  --dir=%{buildroot}%{_datadir}/applications \
-  --add-category="Qt" \
-  helpers/%{name}.desktop 
-
-
 %files
 %license COPYING
 %doc AUTHORS ChangeLog README.md
-%{_mandir}/man1/%{name}.1*
-%{_bindir}/%{name}
+%{_mandir}/man1/kdocker.1*
+%{_bindir}/kdocker
 %config(noreplace) %{_sysconfdir}/bash_completion.d/*
 %{_datadir}/icons/hicolor/*/apps/*
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/appdata/%{name}.appdata.xml
-%{_datadir}/dbus-1/interfaces/%{name}.xml
-%{_datadir}/dbus-1/services/%{name}.service
-%{_datadir}/metainfo/%{name}.metainfo.xml
+%{_datadir}/applications/com.kdocker.KDocker.desktop
+%{_datadir}/dbus-1/interfaces/com.kdocker.KDocker.xml
+%{_datadir}/dbus-1/services/com.kdocker.KDocker.service
+%{_datadir}/metainfo/com.kdocker.KDocker.metainfo.xml
 
 %changelog
 * Tue Sep 10 2024 Artem S. Tashkinov <aros AT gmx.org> - 6.0-0
