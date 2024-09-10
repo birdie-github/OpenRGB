@@ -19,6 +19,8 @@ BuildRequires: cmake(Qt6Gui)
 BuildRequires: pkgconfig(Qt5Gui)
 %endif
 
+BuildRequires: cmake
+BuildRequires: gcc-c++
 BuildRequires: libXpm-devel
 BuildRequires: xorg-x11-proto-devel
 BuildRequires: libxcb-devel
@@ -45,17 +47,16 @@ also be made to disappear from the task bar.
 
 %build
 %if 0%{?with_qt6}
-%qmake_qt6
+mkdir build
+pushd build
+%cmake
 %else
 %qmake_qt5
 %endif
 
-%{make_build}
-
 
 %install
 make install INSTALL_ROOT=%{buildroot}
-
 install -m644 -p -D helpers/%{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
 
 desktop-file-install \
