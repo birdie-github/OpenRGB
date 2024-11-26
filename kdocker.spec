@@ -3,7 +3,7 @@
 Name:    kdocker
 Vendor:  com.kdocker
 Summary: Dock any application in the system tray
-Version: 6.1
+Version: 6.2
 Release: 0%{?dist}
 
 License: GPLv2+
@@ -61,6 +61,9 @@ also be made to disappear from the task bar.
 %{_datadir}/metainfo/com.kdocker.KDocker.metainfo.xml
 
 %changelog
+* Tue Nov 26 2024 Artem S. Tashkinov <aros AT gmx.org> - 6.2-0
+- Upstream update
+
 * Sat Sep 28 2024 Artem S. Tashkinov <aros AT gmx.org> - 6.1-0
 - Final release
 
